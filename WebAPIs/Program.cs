@@ -26,12 +26,12 @@ namespace WebAPIs
             request.Method = Method.Post;
                 // IRestResponse response = client.Execute(request);
 
-                var payload = new JObject();
+            var payload = new JObject();
 
             // parameters 
             var adjustment_quantity = 3;
             var inventory_adjustment_reason_id = 544414;
-            var current_quantity = 1;
+            //var current_quantity = 1;
             var part_id = 1695453;
             var part_location_detail_id = 17332424;
 
@@ -39,7 +39,6 @@ namespace WebAPIs
             payload.Add("adjustment_quantity", adjustment_quantity);
             payload.Add("inventory_adjustment_reason_id", inventory_adjustment_reason_id);
 
-            //payload.Add("current_quantity", current_quantity);
             payload.Add("part_id", part_id);
 
             payload.Add("part_location_detail_id", part_location_detail_id);
@@ -49,6 +48,7 @@ namespace WebAPIs
             var results = client.PostAsync(request).Result;
 
                 Console.WriteLine(results);
+                Console.ReadLine(); 
             
             }
         }
